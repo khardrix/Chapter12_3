@@ -17,6 +17,7 @@ import java.io.*;
 public class Chapter12_3 {
 
     public static void main(String[] args) {
+        // Local Variables
         Random dice = new Random();
         String fileName = "numbers.txt";
         PrintWriter printWriter = null;
@@ -31,8 +32,10 @@ public class Chapter12_3 {
 
         for(int i = 0; i < 100; i++){
             intArray[i] = 1 + dice.nextInt(100);
-            printWriter.println("Random #:" + i + " = " + intArray[i]);
+            printWriter.write("Random #:" + (i+1) + " = " + intArray[i] + "\n");
         }
 
+        printWriter.flush();
+        printWriter.close();
     }
 }
