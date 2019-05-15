@@ -34,8 +34,10 @@ public class Chapter12_3 {
             e.printStackTrace();
         }
         finally {
-            printWriter.flush();
-            printWriter.close();
+            if(printWriter != null) {
+                printWriter.flush();
+                printWriter.close();
+            }
         }
     }
 }
