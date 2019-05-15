@@ -25,17 +25,17 @@ public class Chapter12_3 {
 
         try{
             printWriter = new PrintWriter(fileName);
+            for(int i = 0; i < 100; i++){
+                intArray[i] = 1 + dice.nextInt(100);
+                printWriter.write("Random #:" + (i+1) + " = " + intArray[i] + "\n");
+            }
         }
         catch (FileNotFoundException e){
             e.printStackTrace();
         }
-
-        for(int i = 0; i < 100; i++){
-            intArray[i] = 1 + dice.nextInt(100);
-            printWriter.write("Random #:" + (i+1) + " = " + intArray[i] + "\n");
+        finally {
+            printWriter.flush();
+            printWriter.close();
         }
-
-        printWriter.flush();
-        printWriter.close();
     }
 }
